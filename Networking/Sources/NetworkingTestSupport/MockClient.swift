@@ -1,7 +1,7 @@
 import Foundation
 import Networking
 
-public struct MockNetwork: NetworkClient {
+public struct MockClient: Client {
     public enum MockNetworkError: Error {
         case noScenarioSet
     }

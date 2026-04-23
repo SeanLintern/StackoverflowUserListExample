@@ -32,10 +32,6 @@ let package = Package(
             ]
         ),
         .testTarget(
-            name: "NetworkingTests",
-            dependencies: ["Networking"]
-        ),
-        .testTarget(
             name: "NetworkingTestSupportTests",
             dependencies: ["NetworkingTestSupport"]
         ),
