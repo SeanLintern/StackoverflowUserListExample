@@ -1,6 +1,6 @@
 import Foundation
 
-struct StackOverflowUser: Codable, Equatable {
+public struct StackOverflowUser: Codable, Equatable {
     enum CodingKeys: String, CodingKey {
         case id = "user_id"
         case name = "display_name"

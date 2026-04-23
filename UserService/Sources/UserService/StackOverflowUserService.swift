@@ -1,18 +1,18 @@
 import Foundation
 import Networking
 
-struct StackOverflowUserService: UserService {
+public struct StackOverflowUserService: UserService {
     private let client: Client
 
     private static let baseURL = URL(string: "https://api.stackexchange.com/2.3/users")!
 
     private static let decoder: JSONDecoder = .init()
 
-    init(client: Client = RemoteClient()) {
+    public init(client: Client = RemoteClient()) {
         self.client = client
     }
 
-    func topTwentyStackOverflowUsersByReputation() async throws -> [StackOverflowUser] {
+    public func topTwentyStackOverflowUsersByReputation() async throws -> [StackOverflowUser] {
         return try await fetchUsers(page: 1, pageSize: 20, order: "desc", sort: "reputation")
     }
 
