@@ -27,6 +27,10 @@
 		630ABDF02F9A2B1E003BF488 /* StackoverflowUserListExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StackoverflowUserListExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		630ABE062F9A2B20003BF488 /* StackoverflowUserListExampleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StackoverflowUserListExampleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		630ABE102F9A2B20003BF488 /* StackoverflowUserListExampleUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StackoverflowUserListExampleUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		630ABE242F9A30AC003BF488 /* UserService */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = UserService; sourceTree = "<group>"; };
+		630ABE252F9A30E7003BF488 /* FavouriteService */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = FavouriteService; sourceTree = "<group>"; };
+		630ABE262F9A3113003BF488 /* ImageService */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = ImageService; sourceTree = "<group>"; };
+		630ABE272F9A32CD003BF488 /* Networking */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Networking; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
@@ -88,6 +92,10 @@
 		630ABDE72F9A2B1E003BF488 = {
 			isa = PBXGroup;
 			children = (
+				630ABE272F9A32CD003BF488 /* Networking */,
+				630ABE262F9A3113003BF488 /* ImageService */,
+				630ABE252F9A30E7003BF488 /* FavouriteService */,
+				630ABE242F9A30AC003BF488 /* UserService */,
 				630ABDF22F9A2B1E003BF488 /* StackoverflowUserListExample */,
 				630ABE092F9A2B20003BF488 /* StackoverflowUserListExampleTests */,
 				630ABE132F9A2B20003BF488 /* StackoverflowUserListExampleUITests */,
