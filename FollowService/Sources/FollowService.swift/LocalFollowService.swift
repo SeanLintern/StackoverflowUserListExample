@@ -1,6 +1,6 @@
 import Foundation
 
-class LocalFollowService: FollowService {
+public class LocalFollowService: FollowService {
     private static let storageKey = "FollowingIDs"
     private var following: Set<Int> = []
 
@@ -9,7 +9,7 @@ class LocalFollowService: FollowService {
 
     /// Service for following users
     /// - Parameter ephemeral: Wether the sessions data should only be kept in memory
-    init(ephemeral: Bool = false, storage: UserDefaults = .standard) {
+    public init(ephemeral: Bool = false, storage: UserDefaults = .standard) {
         self.ephemeral = ephemeral
         self.storage = storage
 
@@ -18,11 +18,11 @@ class LocalFollowService: FollowService {
         }
     }
 
-    func isFollowed(id: Int) -> Bool {
+    public func isFollowed(id: Int) -> Bool {
         return following.contains(id)
     }
 
-    func toggleFollowStatus(id: Int) {
+    public func toggleFollowStatus(id: Int) {
         if following.contains(id) {
             following.remove(id)
         } else {

@@ -8,10 +8,10 @@ public struct StackOverflowUser: Codable, Equatable {
         case profileImage = "profile_image"
     }
 
-    let id: Int
-    let name: String
-    let reputation: Int
-    let profileImage: URL
+    public let id: Int
+    public let name: String
+    public let reputation: Int
+    public let profileImage: URL
 
     init(id: Int, name: String, reputation: Int, profileImage: URL) {
         self.id = id

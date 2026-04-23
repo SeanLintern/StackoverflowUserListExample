@@ -1,3 +1,4 @@
+import FollowService
 import UIKit
 import UserService
 
@@ -10,8 +11,14 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let window = UIWindow(windowScene: windowScene)
 
         let stackOverflowUserService = StackOverflowUserService()
+        let followeService = LocalFollowService()
 
-        let rootVC = UserListViewController(viewModel: .init(userService: stackOverflowUserService))
+        let rootVC = UserListViewController(
+            viewModel: .init(
+                userService: stackOverflowUserService,
+                followService: followeService
+            )
+        )
 
         let navController = UINavigationController(rootViewController: rootVC)
 
