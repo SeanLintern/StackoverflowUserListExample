@@ -37,6 +37,7 @@
 		630ABE262F9A3113003BF488 /* ImageService */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = ImageService; sourceTree = "<group>"; };
 		630ABE272F9A32CD003BF488 /* Networking */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Networking; sourceTree = "<group>"; };
 		630ABE3F2F9A52EC003BF488 /* FollowService */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = FollowService; sourceTree = "<group>"; };
+		630ABE562F9AD058003BF488 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
@@ -101,6 +102,7 @@
 		630ABDE72F9A2B1E003BF488 = {
 			isa = PBXGroup;
 			children = (
+				630ABE562F9AD058003BF488 /* README.md */,
 				630ABE272F9A32CD003BF488 /* Networking */,
 				630ABE262F9A3113003BF488 /* ImageService */,
 				630ABE3F2F9A52EC003BF488 /* FollowService */,
