@@ -1,10 +1,3 @@
-//
-//  StackoverflowUserListExampleUITestsLaunchTests.swift
-//  StackoverflowUserListExampleUITests
-//
-//  Created by Sean Lintern on 23/04/2026.
-//
-
 import XCTest
 
 final class StackoverflowUserListExampleUITestsLaunchTests: XCTestCase {

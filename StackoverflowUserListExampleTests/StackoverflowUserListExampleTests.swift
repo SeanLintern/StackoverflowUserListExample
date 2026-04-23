@@ -1,10 +1,3 @@
-//
-//  StackoverflowUserListExampleTests.swift
-//  StackoverflowUserListExampleTests
-//
-//  Created by Sean Lintern on 23/04/2026.
-//
-
 import Testing
 @testable import StackoverflowUserListExample
 

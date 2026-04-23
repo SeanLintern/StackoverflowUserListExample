@@ -1,5 +1,4 @@
 import Foundation
-import Networking
 
 public struct MockClient: Client {
     public enum MockNetworkError: Error {
@@ -27,7 +26,7 @@ public struct MockClient: Client {
             return (
                 .init(),
                 HTTPURLResponse(
-                    url: .applicationDirectory,
+                    url: url,
                     statusCode: errorCode,
                     httpVersion: nil,
                     headerFields: [:]

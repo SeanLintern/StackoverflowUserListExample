@@ -1,10 +1,3 @@
-//
-//  AppDelegate.swift
-//  StackoverflowUserListExample
-//
-//  Created by Sean Lintern on 23/04/2026.
-//
-
 import UIKit
 
 @main
