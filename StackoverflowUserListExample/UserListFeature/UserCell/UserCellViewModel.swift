@@ -1,15 +1,35 @@
 import FollowService
 import Foundation
+import ImageService
+import UIKit
 import UserService
 
-struct UserCellViewModel {
+class UserCellViewModel {
+    typealias UserCellImageUpdateCallback = (UIImage?) -> Void
+
     let user: StackOverflowUser
 
-    private let followService: FollowService
+    var imageUpdateHandler: UserCellImageUpdateCallback?
 
-    init(user: StackOverflowUser, followService: FollowService) {
+    private(set) var userImage: UIImage? {
+        didSet {
+            imageUpdateHandler?(userImage)
+        }
+    }
+
+    private let followService: FollowService
+    private let imageService: ImageService
+
+    init(
+        user: StackOverflowUser,
+        followService: FollowService,
+        imageService: ImageService
+    ) {
         self.user = user
         self.followService = followService
+        self.imageService = imageService
+
+        preloadImage()
     }
 
     func isFollowing() -> Bool {
@@ -18,5 +38,13 @@ struct UserCellViewModel {
 
     func followPress() {
         followService.toggleFollowStatus(id: user.id)
+    }
+
+    private func preloadImage() {
+        Task { @MainActor [weak self] in
+            guard let self else { return }
+            let image = try await imageService.fetchImage(url: user.profileImage)
+            userImage = image
+        }
     }
 }

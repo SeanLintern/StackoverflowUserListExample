@@ -1,5 +1,6 @@
 import FollowService
 import Foundation
+import ImageService
 import UserService
 
 class UserListViewModel {
@@ -14,6 +15,7 @@ class UserListViewModel {
 
     private let userService: UserService
     private let followService: FollowService
+    private let imageService: ImageService
 
     private(set) var state: ViewState = .uninitialised {
         didSet {
@@ -25,9 +27,14 @@ class UserListViewModel {
 
     var viewStateChangeHandler: UserListViewModelStateChangeHandler?
 
-    init(userService: UserService, followService: FollowService) {
+    init(
+        userService: UserService,
+        followService: FollowService,
+        imageService: ImageService
+    ) {
         self.userService = userService
         self.followService = followService
+        self.imageService = imageService
     }
 
     func viewDidLoad() {
@@ -42,7 +49,14 @@ class UserListViewModel {
         Task {
             do {
                 let users = try await userService.topTwentyStackOverflowUsersByReputation()
-                let viewModels = users.map { UserCellViewModel(user: $0, followService: followService)}
+
+                let viewModels = users.map {
+                    UserCellViewModel(
+                        user: $0,
+                        followService: followService,
+                        imageService: imageService
+                    )
+                }
                 rows = viewModels
 
                 if rows.isEmpty {

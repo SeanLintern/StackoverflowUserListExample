@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		630ABE452F9A65BC003BF488 /* UserService in Frameworks */ = {isa = PBXBuildFile; productRef = 630ABE442F9A65BC003BF488 /* UserService */; };
 		630ABE4A2F9A6F26003BF488 /* FollowService in Frameworks */ = {isa = PBXBuildFile; productRef = 630ABE492F9A6F26003BF488 /* FollowService */; };
+		630ABE552F9AC935003BF488 /* ImageService in Frameworks */ = {isa = PBXBuildFile; productRef = 630ABE542F9AC935003BF488 /* ImageService */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -74,6 +75,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				630ABE552F9AC935003BF488 /* ImageService in Frameworks */,
 				630ABE452F9A65BC003BF488 /* UserService in Frameworks */,
 				630ABE4A2F9A6F26003BF488 /* FollowService in Frameworks */,
 			);
@@ -150,6 +152,7 @@
 			packageProductDependencies = (
 				630ABE442F9A65BC003BF488 /* UserService */,
 				630ABE492F9A6F26003BF488 /* FollowService */,
+				630ABE542F9AC935003BF488 /* ImageService */,
 			);
 			productName = StackoverflowUserListExample;
 			productReference = 630ABDF02F9A2B1E003BF488 /* StackoverflowUserListExample.app */;
@@ -627,6 +630,10 @@
 		630ABE492F9A6F26003BF488 /* FollowService */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = FollowService;
+		};
+		630ABE542F9AC935003BF488 /* ImageService */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = ImageService;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

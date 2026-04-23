@@ -1,4 +1,5 @@
 import FollowService
+import ImageService
 import UIKit
 import UserService
 
@@ -12,11 +13,13 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
         let stackOverflowUserService = StackOverflowUserService()
         let followeService = LocalFollowService()
+        let imageService = RemoteImageService()
 
         let rootVC = UserListViewController(
             viewModel: .init(
                 userService: stackOverflowUserService,
-                followService: followeService
+                followService: followeService,
+                imageService: imageService
             )
         )
 

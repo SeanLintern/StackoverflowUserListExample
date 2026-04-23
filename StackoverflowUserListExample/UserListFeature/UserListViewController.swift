@@ -1,4 +1,5 @@
 import FollowService
+import ImageService
 import UIKit
 import UserService
 
@@ -9,6 +10,8 @@ class UserListViewController: UIViewController {
     private lazy var tableView: UITableView = {
         let table = UITableView()
         table.translatesAutoresizingMaskIntoConstraints = false
+        table.rowHeight = UITableView.automaticDimension
+        table.estimatedRowHeight = 76
         table.dataSource = self
         return table
     }()
@@ -65,6 +68,8 @@ class UserListViewController: UIViewController {
             errorMessage.centerXAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerXAnchor),
             errorMessage.centerYAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerYAnchor)
         ])
+
+        view.backgroundColor = .systemBackground
 
         bindViewModel()
 
@@ -124,7 +129,8 @@ extension UserListViewController: UITableViewDataSource {
                 storage: .init(
                     suiteName: String(describing: UserListViewController.self)
                 ) ?? .standard
-            )
+            ),
+            imageService: PreviewImageService()
         )
     )
 }
@@ -138,7 +144,8 @@ extension UserListViewController: UITableViewDataSource {
                 storage: .init(
                     suiteName: String(describing: UserListViewController.self)
                 ) ?? .standard
-            )
+            ),
+            imageService: PreviewImageService()
         )
     )
 }

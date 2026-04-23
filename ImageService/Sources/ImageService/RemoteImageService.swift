@@ -1,11 +1,11 @@
 import Networking
 import UIKit
 
-struct RemoteImageService: ImageService {
+public struct RemoteImageService: ImageService {
     private let client: Client
     private let cache: ImageCache
 
-    init(
+    public init(
         client: Client = RemoteClient(),
         cache: ImageCache = NSCacheBackedImageCache()
     ) {
@@ -13,7 +13,7 @@ struct RemoteImageService: ImageService {
         self.cache = cache
     }
 
-    func fetchImage(url: URL) async throws -> UIImage {
+    public func fetchImage(url: URL) async throws -> UIImage {
         if let image = cache.fetchCachedImage(url: url) {
             return image
         }
@@ -28,3 +28,4 @@ struct RemoteImageService: ImageService {
         throw ImageServiceError.couldNotParseImageData
     }
 }
+

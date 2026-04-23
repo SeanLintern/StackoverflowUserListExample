@@ -2,8 +2,8 @@ import Foundation
 
 public class LocalFollowService: FollowService {
     private static let storageKey = "FollowingIDs"
-    private var following: Set<Int> = []
 
+    private var following: Set<Int> = []
     private var ephemeral: Bool
     private var storage: UserDefaults
 
@@ -35,7 +35,7 @@ public class LocalFollowService: FollowService {
     }
 
     private func attemptToLoadFollowing() {
-        if let followerIDs = storage.object(forKey: Self.storageKey) as? [Int] {
+        if let followerIDs = storage.array(forKey: Self.storageKey) as? [Int] {
             let setOfFollowersIDs = Set(followerIDs)
             self.following = setOfFollowersIDs
         }
