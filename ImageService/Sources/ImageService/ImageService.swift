@@ -1,2 +1,10 @@
-// The Swift Programming Language
-// https://docs.swift.org/swift-book
+import UIKit
+
+protocol ImageService {
+    func fetchImage(url: URL) async throws -> UIImage
+}
+
+enum ImageServiceError: Error {
+    case couldNotParseImageData
+}
+

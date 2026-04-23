@@ -14,10 +14,6 @@ let package = Package(
             name: "Networking",
             targets: ["Networking"]
         ),
-        .library(
-            name: "NetworkingTestSupport",
-            targets: ["NetworkingTestSupport"],
-        ),
     ],
     targets: [
         // Targets are the basic building blocks of a package, defining a module or a test suite.
@@ -25,15 +21,9 @@ let package = Package(
         .target(
             name: "Networking"
         ),
-        .target(
-            name: "NetworkingTestSupport",
-            dependencies: [
-                "Networking"
-            ]
-        ),
         .testTarget(
-            name: "NetworkingTestSupportTests",
-            dependencies: ["NetworkingTestSupport"]
+            name: "NetworkingTests",
+            dependencies: ["Networking"]
         ),
     ]
 )
